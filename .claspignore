@@ -1,4 +1,4 @@
 **/**
 !dist/*.js
 !dist/*.json
-!appscript.json
+!dist/appscript.json
