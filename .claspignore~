@@ -1,0 +1,7 @@
+**/**
+!dist/*.js
+!dist/*.json
+!dist/appsscript.json
+!dev/*.js
+!dev/*.json
+!dev/appsscript.json

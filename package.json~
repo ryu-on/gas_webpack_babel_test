@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "dev": "browserify -t babelify -p gasify src/main.js -o dev/main.js"
+    "dev": "set $NODE_PATH=\"./src\" & browserify -t babelify -p gasify src/main.js -o dev/main.js"
   },
   "repository": {
     "type": "git",
