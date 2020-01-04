@@ -1,7 +1,5 @@
-dist/**
+dev/**
 node_modules/**
 secret/
-*~$
-*un~$
-*swp$
-^\.\.*
+*~
+*swp
