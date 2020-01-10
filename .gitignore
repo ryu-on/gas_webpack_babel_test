@@ -1,5 +1,6 @@
 dev/**
+prod/**
 node_modules/**
-secret/
+secret/**
 *~
 *swp
