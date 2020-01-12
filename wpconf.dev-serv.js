@@ -1,12 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
+const GasPlugin = require('gas-webpack-plugin');
 
 module.exports = {
 	mode: "development",
 	//devtool: "inline-source-map",
 	entry: {
 		index: path.resolve(__dirname, "./src/serv/index.js"),
-    	},
+	},
 
 	// ファイルの出力設定
 	output: {
@@ -21,9 +22,9 @@ module.exports = {
 				test: /\.js$/,
 				exclude: /node_modules/,
 				use:{
-				        loader: 'babel-loader',
-       					options: {
-          					presets: [
+						loader: 'babel-loader',
+						options: {
+							presets: [
 							[
 								'@babel/preset-env',
 								{
@@ -31,19 +32,21 @@ module.exports = {
 									"useBuiltIns": "entry",
 									"corejs": 3
 								}
-							]
-						],
-						plugins: [
-							["@babel/plugin-transform-runtime",
+							]],
+							plugins: [[
+								"@babel/plugin-transform-runtime",
 								{
-        							"corejs": 3,
-        							"version": "7.7.7"
+									"corejs": 3,
+									"version": "7.7.7"
 								}
-							]
-						],
-        				}
+							]],
+						}
 				}
 			}
 		]
-	},
+	}
+	,
+	plugins:[
+		new GasPlugin()
+	],
 };
